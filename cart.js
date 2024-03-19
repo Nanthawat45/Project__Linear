@@ -75,21 +75,3 @@ function removeProduct(productId) {
   }
 }
 
-
-function filterProducts(category) {
-  // เรียกใช้ฟังก์ชัน updateCartDisplay() โดยส่งหมวดหมู่ที่เกี่ยวข้องไป
-  updateCartDisplay(category);
-
-  // ตั้งค่า CSS เพื่อซ่อนสินค้าที่ไม่ได้อยู่ในหมวดหมู่ที่เลือก
-  const products = document.querySelectorAll(".product");
-  products.forEach((product) => {
-    if (category === "all" || product.classList.contains(category)) {
-      product.style.display = "block";
-    } else {
-      product.style.display = "none";
-    }
-  });
-}
-
-
-

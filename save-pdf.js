@@ -48,4 +48,3 @@ document.getElementById("place-order").addEventListener("click", async () => {
   a.download = "order.pdf";
   a.click();
 });
-

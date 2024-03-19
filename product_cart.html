@@ -1,49 +1,99 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.16.0/dist/pdf-lib.min.js"></script>
 
-<head>
-  <title>Shopping Cart</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.16.0/dist/pdf-lib.min.js"></script>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-
-<body>
-  <h1 class="h1">Shopping Cart</h1>
-  <nav>
-    <nav>
-      <img src="icon/p1.svg" alt="ไอคอน_ทั้งหมด" onclick="filterProducts('all')" />
-      <img src="icon/p2.svg" alt="ไอคอน_เครื่องดื่ม" onclick="filterProducts('category1')" />
-      <img src="icon/p3.svg" alt="ไอคอน_ขนม" onclick="filterProducts('category2')" />
-      <img src="icon/p4.svg" alt="ไอคอน_ของเล่น" onclick="filterProducts('category3')" />
-      <img src="icon/p5.svg" alt="ไอคอน_น้ำยาปลับผ้านุ้ม" onclick="filterProducts('category4')" />
-      <img src="icon/p7.svg" alt="ไอคอน_แอลกอฮอ" onclick="filterProducts('category5')" />
-      <img src="icon/p8.svg" alt="ไอคอน_แอลกอฮอ" onclick="filterProducts('category6')" />
-      <img src="icon/p9.svg" alt="ไอคอน_แอลกอฮอ" onclick="filterProducts('category7')" />
-      <img src="icon/p10.svg" alt="ไอคอน_แอลกอฮอ" onclick="filterProducts('category8')" />
-      <img src="icon/p6.svg" alt="ไอคอน_ของฝากผาย" onclick="filterProducts('category9')" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <h1 class="h1">Shopping Cart</h1>
+    <nav class="tabtitle">
+      <img
+        class="tab-link active-link"
+        src="icon/p2.svg"
+        alt="ไอคอน_เครื่องดื่ม"
+        onclick="opentab('category1')"
+      />
+      <img
+        class="tab-link"
+        src="icon/p3.svg"
+        alt="ไอคอน_ขนม"
+        onclick="opentab('category2')"
+      />
+      <img
+        class="tab-link"
+        src="icon/p4.svg"
+        alt="ไอคอน_ของเล่น"
+        onclick="opentab('category3')"
+      />
+      <img
+        class="tab-link"
+        src="icon/p5.svg"
+        alt="ไอคอน_น้ำยาปลับผ้านุ้ม"
+        onclick="opentab('category4')"
+      />
+      <img
+        class="tab-link"
+        src="icon/p7.svg"
+        alt="ไอคอน_แอลกอฮอ"
+        onclick="opentab('category5')"
+      />
+      <img
+        class="tab-link"
+        src="icon/p8.svg"
+        alt="ไอคอน_แอลกอฮอ"
+        onclick="opentab('category6')"
+      />
+      <img
+        class="tab-link"
+        src="icon/p9.svg"
+        alt="ไอคอน_แอลกอฮอ"
+        onclick="opentab('category7')"
+      />
+      <img
+        class="tab-link"
+        src="icon/p10.svg"
+        alt="ไอคอน_แอลกอฮอ"
+        onclick="opentab('category8')"
+      />
+      <img
+        class="tab-link"
+        src="icon/p6.svg"
+        alt="ไอคอน_ของฝากผาย"
+        onclick="opentab('category9')"
+      />
     </nav>
-
     <div class="container">
-      <div id="products">
-
-
-        <!-- เครื่องดื่ม -->
-        <img src="icon/p2.svg" br>
-
+      <div class="tab-content active-tab" id="category1">
         <div class="product">
           <img src="เครื่องดื่ม/1.png" />
           <div class="layer">
-            <p class="lead">ไวตามิลค์  $20</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_001" data-price="20">
+            <p class="lead">ไวตามิลค์ $20</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_001"
+              data-price="20"
+            >
               Add to Cart
             </button>
           </div>
@@ -51,8 +101,13 @@
         <div class="product">
           <img src="เครื่องดื่ม/2.jpg" />
           <div class="layer">
-            <p class="lead">ดัชมิลล์ส้ม  $12</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_002" data-price="13">
+            <p class="lead">ดัชมิลล์ส้ม $12</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_002"
+              data-price="13"
+            >
               Add to Cart
             </button>
           </div>
@@ -61,7 +116,12 @@
           <img src="เครื่องดื่ม/3.jpg" />
           <div class="layer">
             <p class="lead">ดัชมิลล์ม่อง $12</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_003" data-price="13">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_003"
+              data-price="13"
+            >
               Add to Cart
             </button>
           </div>
@@ -70,7 +130,12 @@
           <img src="เครื่องดื่ม/4.jpg" />
           <div class="layer">
             <p class="lead">ดัชมิลล์เขียว $12</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_004" data-price="13">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_004"
+              data-price="13"
+            >
               Add to Cart
             </button>
           </div>
@@ -79,7 +144,12 @@
           <img src="เครื่องดื่ม/5.jpg" />
           <div class="layer">
             <p class="lead">MILO $12</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_005" data-price="13">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_005"
+              data-price="13"
+            >
               Add to Cart
             </button>
           </div>
@@ -88,7 +158,12 @@
           <img src="เครื่องดื่ม/006.png" />
           <div class="layer">
             <p class="lead">โอวัลติน $12</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_006" data-price="13">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_006"
+              data-price="13"
+            >
               Add to Cart
             </button>
           </div>
@@ -97,7 +172,12 @@
           <img src="เครื่องดื่ม/007.jpg" />
           <div class="layer">
             <p class="lead">ดีมอลต์ $20</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_007" data-price="13">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_007"
+              data-price="13"
+            >
               Add to Cart
             </button>
           </div>
@@ -106,7 +186,12 @@
           <img src="เครื่องดื่ม/008.png" alt="" />
           <div class="layer">
             <p class="lead">น้ำตาลสด $25</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_008" data-price="25">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_008"
+              data-price="25"
+            >
               Add to Cart
             </button>
           </div>
@@ -115,7 +200,12 @@
           <img src="เครื่องดื่ม/009.jpg" />
           <div class="layer">
             <p class="lead">ชาอัมพวา $10</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_009" data-price="10">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_009"
+              data-price="10"
+            >
               Add to Cart
             </button>
           </div>
@@ -124,7 +214,12 @@
           <img src="เครื่องดื่ม/010.jpg" />
           <div class="layer">
             <p class="lead">กาโตะ C+ $12</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_010" data-price="11">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_010"
+              data-price="11"
+            >
               Add to Cart
             </button>
           </div>
@@ -133,7 +228,12 @@
           <img src="เครื่องดื่ม/011.jpg" />
           <div class="layer">
             <p class="lead">น้ำมะพร้าวน้ำตาลสด $20</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_011" data-price="20">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_011"
+              data-price="20"
+            >
               Add to Cart
             </button>
           </div>
@@ -142,7 +242,12 @@
           <img src="เครื่องดื่ม/012.webp" />
           <div class="layer">
             <p class="lead">เบอร์ดี่แดง $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_012" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_012"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -151,7 +256,12 @@
           <img src="เครื่องดื่ม/013..png" />
           <div class="layer">
             <p class="lead">เบอร์ดี่เขียว $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_013" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_013"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -160,7 +270,12 @@
           <img src="เครื่องดื่ม/014.jpg" />
           <div class="layer">
             <p class="lead">คาลพิสแลคโตะ ฟ้า $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_014" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_014"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -169,7 +284,12 @@
           <img src="เครื่องดื่ม/015.jpg" />
           <div class="layer">
             <p class="lead">คาลพิสแลคโตะ ชมพู $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_015" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_015"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -178,7 +298,12 @@
           <img src="เครื่องดื่ม/016.jpg" />
           <div class="layer">
             <p class="lead">M-150 $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_016" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_016"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -187,7 +312,12 @@
           <img src="เครื่องดื่ม/017.webp" />
           <div class="layer">
             <p class="lead">M-150 $20</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_017" data-price="20">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_017"
+              data-price="20"
+            >
               Add to Cart
             </button>
           </div>
@@ -196,7 +326,12 @@
           <img src="เครื่องดื่ม/018.png" />
           <div class="layer">
             <p class="lead">Readyแดง $20</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_018" data-price="20">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_018"
+              data-price="20"
+            >
               Add to Cart
             </button>
           </div>
@@ -205,7 +340,12 @@
           <img src="เครื่องดื่ม/019.png" />
           <div class="layer">
             <p class="lead">Readyม่วง $20</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_019" data-price="20">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_019"
+              data-price="20"
+            >
               Add to Cart
             </button>
           </div>
@@ -214,7 +354,12 @@
           <img src="เครื่องดื่ม/020.jpg" />
           <div class="layer">
             <p class="lead">C-vittส้ม $20</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_020" data-price="20">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_020"
+              data-price="20"
+            >
               Add to Cart
             </button>
           </div>
@@ -223,7 +368,12 @@
           <img src="เครื่องดื่ม/021.jpg" />
           <div class="layer">
             <p class="lead">C-vittแดง $20</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_021" data-price="20">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_021"
+              data-price="20"
+            >
               Add to Cart
             </button>
           </div>
@@ -232,7 +382,12 @@
           <img src="เครื่องดื่ม/022.jpg" />
           <div class="layer">
             <p class="lead">กระชายดำ $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_022" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_022"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -241,7 +396,12 @@
           <img src="เครื่องดื่ม/023.webp" />
           <div class="layer">
             <p class="lead">โสมอินซัม $20</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_023" data-price="20">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_023"
+              data-price="20"
+            >
               Add to Cart
             </button>
           </div>
@@ -250,7 +410,12 @@
           <img src="เครื่องดื่ม/024.webp" />
           <div class="layer">
             <p class="lead">กระทิงแดง $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_024" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_024"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -259,7 +424,12 @@
           <img src="เครื่องดื่ม/025.jpg" />
           <div class="layer">
             <p class="lead">คาราบาวแดง $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_025" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_025"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -268,7 +438,12 @@
           <img src="เครื่องดื่ม/026.webp" />
           <div class="layer">
             <p class="lead">โสมเกาหลีตังกุยจับ $20</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_026" data-price="20">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_026"
+              data-price="20"
+            >
               Add to Cart
             </button>
           </div>
@@ -277,7 +452,12 @@
           <img src="เครื่องดื่ม/027.webp" />
           <div class="layer">
             <p class="lead">ลิโพ $13</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_027" data-price="13">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_027"
+              data-price="13"
+            >
               Add to Cart
             </button>
           </div>
@@ -285,8 +465,13 @@
         <div class="product">
           <img src="เครื่องดื่ม/028.webp" />
           <div class="layer">
-            <p class="lead">สปอนเซอร์  $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_028" data-price="15">
+            <p class="lead">สปอนเซอร์ $15</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_028"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -295,7 +480,12 @@
           <img src="เครื่องดื่ม/029.webp" />
           <div class="layer">
             <p class="lead">Mสปอต $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_029" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_029"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -304,7 +494,12 @@
           <img src="เครื่องดื่ม/030.png" />
           <div class="layer">
             <p class="lead">ยาคูลท์ $10</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_030" data-price="10">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_030"
+              data-price="10"
+            >
               Add to Cart
             </button>
           </div>
@@ -313,7 +508,12 @@
           <img src="เครื่องดื่ม/031.jpg" />
           <div class="layer">
             <p class="lead">บิทาเกน $10</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_031" data-price="10">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_031"
+              data-price="10"
+            >
               Add to Cart
             </button>
           </div>
@@ -322,7 +522,12 @@
           <img src="เครื่องดื่ม/032.jpg" />
           <div class="layer">
             <p class="lead">บิทาเกนสตอเบอรี่ $25</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_032" data-price="25">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_032"
+              data-price="25"
+            >
               Add to Cart
             </button>
           </div>
@@ -331,7 +536,12 @@
           <img src="เครื่องดื่ม/033.webp" />
           <div class="layer">
             <p class="lead">บิทาเกน $25</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_033" data-price="25">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_033"
+              data-price="25"
+            >
               Add to Cart
             </button>
           </div>
@@ -340,7 +550,12 @@
           <img src="เครื่องดื่ม/034.jpg" />
           <div class="layer">
             <p class="lead">เป๊ปซี่ $35</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_034" data-price="35">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_034"
+              data-price="35"
+            >
               Add to Cart
             </button>
           </div>
@@ -349,7 +564,12 @@
           <img src="เครื่องดื่ม/035.webp" />
           <div class="layer">
             <p class="lead">โค้ก $35</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_035" data-price="35">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_035"
+              data-price="35"
+            >
               Add to Cart
             </button>
           </div>
@@ -358,7 +578,12 @@
           <img src="เครื่องดื่ม/036.jpg" />
           <div class="layer">
             <p class="lead">แฟนต้าเขียว $30</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_036" data-price="30">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_036"
+              data-price="30"
+            >
               Add to Cart
             </button>
           </div>
@@ -367,7 +592,12 @@
           <img src="เครื่องดื่ม/037.png" />
           <div class="layer">
             <p class="lead">เอสโคล่า $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_037" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_037"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -376,7 +606,12 @@
           <img src="เครื่องดื่ม/038.jpg" />
           <div class="layer">
             <p class="lead">เอสฟ้า $25</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_038" data-price="25">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_038"
+              data-price="25"
+            >
               Add to Cart
             </button>
           </div>
@@ -385,7 +620,12 @@
           <img src="เครื่องดื่ม/039.webp" />
           <div class="layer">
             <p class="lead">อิชิตัน $20</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_039" data-price="20">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_039"
+              data-price="20"
+            >
               Add to Cart
             </button>
           </div>
@@ -394,7 +634,12 @@
           <img src="เครื่องดื่ม/040.png" />
           <div class="layer">
             <p class="lead">โออิชิ $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_040" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_040"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -403,7 +648,12 @@
           <img src="เครื่องดื่ม/041.jpg" />
           <div class="layer">
             <p class="lead">เย็นเย็น $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_040" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_040"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -412,7 +662,12 @@
           <img src="เครื่องดื่ม/042.webp" />
           <div class="layer">
             <p class="lead">เย็นเย็น เหลือง $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_040" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_040"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -421,7 +676,12 @@
           <img src="เครื่องดื่ม/043.jpg" />
           <div class="layer">
             <p class="lead">น้ำส้ม $10</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_043" data-price="10">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_043"
+              data-price="10"
+            >
               Add to Cart
             </button>
           </div>
@@ -430,7 +690,12 @@
           <img src="เครื่องดื่ม/044.jpg" />
           <div class="layer">
             <p class="lead">น้ำส้ม $10</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_044" data-price="10">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_044"
+              data-price="10"
+            >
               Add to Cart
             </button>
           </div>
@@ -439,7 +704,12 @@
           <img src="เครื่องดื่ม/045.jpg" />
           <div class="layer">
             <p class="lead">เป๊ปซี่ $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_045" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_045"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -448,7 +718,12 @@
           <img src="เครื่องดื่ม/046.webp" />
           <div class="layer">
             <p class="lead">แฟนต้า เขียว $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_046" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_046"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -457,7 +732,12 @@
           <img src="เครื่องดื่ม/047.png" />
           <div class="layer">
             <p class="lead">แฟนต้า ส้ม $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_047" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_047"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -466,7 +746,12 @@
           <img src="เครื่องดื่ม/048.webp" />
           <div class="layer">
             <p class="lead">สไปรท์ $20</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_048" data-price="20">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_048"
+              data-price="20"
+            >
               Add to Cart
             </button>
           </div>
@@ -475,7 +760,12 @@
           <img src="เครื่องดื่ม/049.jpg" />
           <div class="layer">
             <p class="lead">โออิชิ $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_049" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_049"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -484,7 +774,12 @@
           <img src="เครื่องดื่ม/050.jpg" />
           <div class="layer">
             <p class="lead">แลคตาซอย $12</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_050" data-price="12">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_050"
+              data-price="12"
+            >
               Add to Cart
             </button>
           </div>
@@ -493,7 +788,12 @@
           <img src="เครื่องดื่ม/051.jpg" />
           <div class="layer">
             <p class="lead">ดีน่า งาดำ $12</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_051" data-price="12">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_051"
+              data-price="12"
+            >
               Add to Cart
             </button>
           </div>
@@ -502,7 +802,12 @@
           <img src="เครื่องดื่ม/052.jpg" />
           <div class="layer">
             <p class="lead">ดีน่า กาบา $12</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_052" data-price="12">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_052"
+              data-price="12"
+            >
               Add to Cart
             </button>
           </div>
@@ -511,7 +816,12 @@
           <img src="เครื่องดื่ม/053.png" />
           <div class="layer">
             <p class="lead">Unif เขียว $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_053" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_053"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -520,7 +830,12 @@
           <img src="เครื่องดื่ม/054.png" />
           <div class="layer">
             <p class="lead">Unif ม่วง $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_054" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_054"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -529,7 +844,12 @@
           <img src="เครื่องดื่ม/055.png" />
           <div class="layer">
             <p class="lead">Unif ส้ม $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_055" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_055"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -538,7 +858,12 @@
           <img src="เครื่องดื่ม/056.png" />
           <div class="layer">
             <p class="lead">Unif ชมพู $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_056" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_056"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -547,7 +872,12 @@
           <img src="เครื่องดื่ม/057.webp" />
           <div class="layer">
             <p class="lead">แบรนด์ $35</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_057" data-price="35">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_057"
+              data-price="35"
+            >
               Add to Cart
             </button>
           </div>
@@ -556,7 +886,12 @@
           <img src="เครื่องดื่ม/058.jpg" />
           <div class="layer">
             <p class="lead">แฟนต้า แดง $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_058" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_058"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -565,7 +900,12 @@
           <img src="เครื่องดื่ม/059.jpg" />
           <div class="layer">
             <p class="lead">แฟนต้า เขียว $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_059" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_059"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -574,7 +914,12 @@
           <img src="เครื่องดื่ม/060.jpg" />
           <div class="layer">
             <p class="lead">แฟนต้า ส้ม $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_060" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_060"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -583,7 +928,12 @@
           <img src="เครื่องดื่ม/061.webp" />
           <div class="layer">
             <p class="lead">สไปรท์ $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_061" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_061"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -592,7 +942,12 @@
           <img src="เครื่องดื่ม/062.jpg" />
           <div class="layer">
             <p class="lead">น้ำเปล่า $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_062" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_062"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -601,31 +956,43 @@
           <img src="เครื่องดื่ม/063.webp" />
           <div class="layer">
             <p class="lead">คริสตัล $7</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic2_063" data-price="7">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic2_063"
+              data-price="7"
+            >
               Add to Cart
             </button>
           </div>
         </div>
-
-
-        <!-- ขนม -->
-        <img src="icon/p3.svg" br>
+      </div>
+      <div class="tab-content" id="category2">
         <div class="product">
           <img src="ขนม/001.5.jpg" />
           <div class="layer">
             <p class="lead">ตูมตาม $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_001" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_001"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
         </div>
-
 
         <div class="product">
           <img src="ขนม/002.5.png" />
           <div class="layer">
             <p class="lead">คอร์นโอ $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_002" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_002"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -634,8 +1001,13 @@
         <div class="product">
           <img src="ขนม/003.5.jpg" />
           <div class="layer">
-            <p class="lead">เลย์  $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_003" data-price="5">
+            <p class="lead">เลย์ $5</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_003"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -644,8 +1016,13 @@
         <div class="product">
           <img src="ขนม/004.5.jpg" />
           <div class="layer">
-            <p class="lead">เลย์  $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_004" data-price="5">
+            <p class="lead">เลย์ $5</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_004"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -654,8 +1031,13 @@
         <div class="product">
           <img src="ขนม/005.5.jpg" />
           <div class="layer">
-            <p class="lead">เลย์  $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_005" data-price="5">
+            <p class="lead">เลย์ $5</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_005"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -665,7 +1047,12 @@
           <img src="ขนม/006.5.jpg" />
           <div class="layer">
             <p class="lead">โปเต้ $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_006" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_006"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -675,7 +1062,12 @@
           <img src="ขนม/007.5.webp" />
           <div class="layer">
             <p class="lead">ตะวัน $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_007" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_007"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -684,7 +1076,12 @@
           <img src="ขนม/008.5.jpg" />
           <div class="layer">
             <p class="lead">คอนเน่ $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_008" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_008"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -693,7 +1090,12 @@
           <img src="ขนม/009.5.jpg" />
           <div class="layer">
             <p class="lead">TORO $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_009" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_009"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -701,8 +1103,13 @@
         <div class="product">
           <img src="ขนม/010.5.jpg" />
           <div class="layer">
-            <p class="lead">ปาร์ตี้  $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_010" data-price="5">
+            <p class="lead">ปาร์ตี้ $5</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_010"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -711,8 +1118,13 @@
         <div class="product">
           <img src="ขนม/011.5.jpg" />
           <div class="layer">
-            <p class="lead">ปาร์ตี้  $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_011" data-price="5">
+            <p class="lead">ปาร์ตี้ $5</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_011"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -721,7 +1133,12 @@
           <img src="ขนม/012.5.jpg" />
           <div class="layer">
             <p class="lead">ขนมมะเขือเทศ $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_012" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_012"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -729,8 +1146,13 @@
         <div class="product">
           <img src="ขนม/013.5.jpg" />
           <div class="layer">
-            <p class="lead">ทิวลี่  $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_013" data-price="5">
+            <p class="lead">ทิวลี่ $5</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_013"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -738,8 +1160,13 @@
         <div class="product">
           <img src="ขนม/014.5.jpg" />
           <div class="layer">
-            <p class="lead">ทิวลี่  $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_014" data-price="5">
+            <p class="lead">ทิวลี่ $5</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_014"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -748,7 +1175,12 @@
           <img src="ขนม/015.5.jpg" />
           <div class="layer">
             <p class="lead">Dewberry $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_015" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_015"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -756,8 +1188,13 @@
         <div class="product">
           <img src="ขนม/016.5.webp" />
           <div class="layer">
-            <p class="lead">ยูโร่  $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_016" data-price="5">
+            <p class="lead">ยูโร่ $5</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_016"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -765,8 +1202,13 @@
         <div class="product">
           <img src="ขนม/017.5.jpg" />
           <div class="layer">
-            <p class="lead">Ahh  $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_017" data-price="5">
+            <p class="lead">Ahh $5</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_017"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -774,8 +1216,13 @@
         <div class="product">
           <img src="ขนม/018.5.jpg" />
           <div class="layer">
-            <p class="lead">Ahh  $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_018" data-price="5">
+            <p class="lead">Ahh $5</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_018"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -784,7 +1231,12 @@
           <img src="ขนม/019.5.jpg" />
           <div class="layer">
             <p class="lead">สาหร่ายปรุงรส $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_019" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_019"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -792,8 +1244,13 @@
         <div class="product">
           <img src="ขนม/020.5.webp" />
           <div class="layer">
-            <p class="lead">TOโจ้  $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_020" data-price="5">
+            <p class="lead">TOโจ้ $5</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_020"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -801,8 +1258,13 @@
         <div class="product">
           <img src="ขนม/021.5.jpg" />
           <div class="layer">
-            <p class="lead">TOโจ้  $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_021" data-price="5">
+            <p class="lead">TOโจ้ $5</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_021"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -810,8 +1272,13 @@
         <div class="product">
           <img src="ขนม/022.5.jpg" />
           <div class="layer">
-            <p class="lead">OREO  $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_022" data-price="5">
+            <p class="lead">OREO $5</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_022"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -819,8 +1286,13 @@
         <div class="product">
           <img src="ขนม/023.5.jpg" />
           <div class="layer">
-            <p class="lead">คริโก้  $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_023" data-price="5">
+            <p class="lead">คริโก้ $5</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_023"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -828,8 +1300,13 @@
         <div class="product">
           <img src="ขนม/024.5.jpg" />
           <div class="layer">
-            <p class="lead">คริโก้  $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_024" data-price="5">
+            <p class="lead">คริโก้ $5</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_024"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -838,7 +1315,12 @@
           <img src="ขนม/025.5.jpg" />
           <div class="layer">
             <p class="lead">CRUNCH $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_025" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_025"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -847,23 +1329,28 @@
           <img src="ขนม/026.5.jpg" />
           <div class="layer">
             <p class="lead">ฮอลล์ $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic3_026" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic3_026"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
         </div>
-
-
-
-
-
-        <!-- ของเล่น -->
-        <img src="icon/p4.svg">
+      </div>
+      <div class="tab-content" id="category3">
         <div class="product">
           <img src="ของเล่น/001.jpg" />
           <div class="layer">
             <p class="lead">สัตว์ปอม $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic4_001" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic4_001"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -871,8 +1358,13 @@
         <div class="product">
           <img src="ของเล่น/002.jpg" />
           <div class="layer">
-            <p class="lead">เลโก้  $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic4_002" data-price="5">
+            <p class="lead">เลโก้ $5</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic4_002"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -880,8 +1372,13 @@
         <div class="product">
           <img src="ของเล่น/003.jpg" />
           <div class="layer">
-            <p class="lead">รถเหล็ก  $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic4_003" data-price="5">
+            <p class="lead">รถเหล็ก $5</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic4_003"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -890,7 +1387,12 @@
           <img src="ของเล่น/004.jpg" />
           <div class="layer">
             <p class="lead">ตุ๊กแกปอม $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic4_004" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic4_004"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -899,7 +1401,12 @@
           <img src="ของเล่น/005.jpg" />
           <div class="layer">
             <p class="lead">ยิงเหลียน $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic4_005" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic4_005"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -908,7 +1415,12 @@
           <img src="ของเล่น/006.jpg" />
           <div class="layer">
             <p class="lead">มีดปอม $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic4_006" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic4_006"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -917,7 +1429,12 @@
           <img src="ของเล่น/007.jpg" />
           <div class="layer">
             <p class="lead">กำไลข้อมือ $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic4_007" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic4_007"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -926,7 +1443,12 @@
           <img src="ของเล่น/008.jpg" />
           <div class="layer">
             <p class="lead">ปลอกดินสอ $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic4_008" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic4_008"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -935,7 +1457,12 @@
           <img src="ของเล่น/009.jpg" />
           <div class="layer">
             <p class="lead">แบงค์กาโม่ $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic4_009" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic4_009"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -944,7 +1471,12 @@
           <img src="ของเล่น/010.jpg" />
           <div class="layer">
             <p class="lead">สติกเกอร์ $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic4_010" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic4_010"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -953,7 +1485,12 @@
           <img src="ของเล่น/011.jpg" />
           <div class="layer">
             <p class="lead">ระบายสี $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic4_011" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic4_011"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -961,8 +1498,13 @@
         <div class="product">
           <img src="ของเล่น/012.jpg" />
           <div class="layer">
-            <p class="lead">สไลม์  $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic4_012" data-price="5">
+            <p class="lead">สไลม์ $5</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic4_012"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -971,7 +1513,12 @@
           <img src="ของเล่น/013.jpg" />
           <div class="layer">
             <p class="lead">ดินน้ำมัน $20</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic4_013" data-price="20">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic4_013"
+              data-price="20"
+            >
               Add to Cart
             </button>
           </div>
@@ -980,7 +1527,12 @@
           <img src="ของเล่น/014.jpg" />
           <div class="layer">
             <p class="lead">ปืนของเล่น - $30</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic4_014" data-price="30">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic4_014"
+              data-price="30"
+            >
               Add to Cart
             </button>
           </div>
@@ -988,8 +1540,13 @@
         <div class="product">
           <img src="ของเล่น/015.jpg" />
           <div class="layer">
-            <p class="lead">รถถัง  $30</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic4_015" data-price="30">
+            <p class="lead">รถถัง $30</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic4_015"
+              data-price="30"
+            >
               Add to Cart
             </button>
           </div>
@@ -998,7 +1555,12 @@
           <img src="ของเล่น/016.jpg" />
           <div class="layer">
             <p class="lead">ปืนของเล่น $30</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic4_016" data-price="30">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic4_016"
+              data-price="30"
+            >
               Add to Cart
             </button>
           </div>
@@ -1006,8 +1568,13 @@
         <div class="product">
           <img src="ของเล่น/017.jpg" />
           <div class="layer">
-            <p class="lead">จิกซอ  $25</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic4_017" data-price="25">
+            <p class="lead">จิกซอ $25</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic4_017"
+              data-price="25"
+            >
               Add to Cart
             </button>
           </div>
@@ -1016,7 +1583,12 @@
           <img src="ของเล่น/018.jpg" />
           <div class="layer">
             <p class="lead">รถบรรทุกของเล่น $30</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic4_018" data-price="30">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic4_018"
+              data-price="30"
+            >
               Add to Cart
             </button>
           </div>
@@ -1025,7 +1597,12 @@
           <img src="ของเล่น/019.jpg" />
           <div class="layer">
             <p class="lead">เครื่องบิน $30</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic4_019" data-price="30">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic4_019"
+              data-price="30"
+            >
               Add to Cart
             </button>
           </div>
@@ -1034,7 +1611,12 @@
           <img src="ของเล่น/020.jpg" />
           <div class="layer">
             <p class="lead">แมส $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic4_020" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic4_020"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -1043,7 +1625,12 @@
           <img src="ของเล่น/021.jpg" />
           <div class="layer">
             <p class="lead">ปืนฟองสบู่ $35</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic4_021" data-price="35">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic4_021"
+              data-price="35"
+            >
               Add to Cart
             </button>
           </div>
@@ -1051,8 +1638,13 @@
         <div class="product">
           <img src="ของเล่น/022.jpg" />
           <div class="layer">
-            <p class="lead">ตุ๊กตา  $20</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic4_022" data-price="20">
+            <p class="lead">ตุ๊กตา $20</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic4_022"
+              data-price="20"
+            >
               Add to Cart
             </button>
           </div>
@@ -1060,8 +1652,13 @@
         <div class="product">
           <img src="ของเล่น/023.jpg" />
           <div class="layer">
-            <p class="lead">ตุ๊กตา  $20</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic4_023" data-price="20">
+            <p class="lead">ตุ๊กตา $20</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic4_023"
+              data-price="20"
+            >
               Add to Cart
             </button>
           </div>
@@ -1069,22 +1666,29 @@
         <div class="product">
           <img src="ของเล่น/024.jpg" />
           <div class="layer">
-            <p class="lead">ตุ๊กตา  $20</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic4_024" data-price="20">
+            <p class="lead">ตุ๊กตา $20</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic4_024"
+              data-price="20"
+            >
               Add to Cart
             </button>
           </div>
         </div>
-
-
-
-        <!-- ซักผ้า -->
-        <img src="icon/p5.svg">
+      </div>
+      <div class="tab-content" id="category4">
         <div class="product">
           <img src="ซักผ้า/001.jpg" />
           <div class="layer">
-            <p class="lead">บรีส  $50</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic5_001" data-price="50">
+            <p class="lead">บรีส $50</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic5_001"
+              data-price="50"
+            >
               Add to Cart
             </button>
           </div>
@@ -1092,8 +1696,13 @@
         <div class="product">
           <img src="ซักผ้า/002.webp" />
           <div class="layer">
-            <p class="lead">บรีส  $99</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic5_002" data-price="99">
+            <p class="lead">บรีส $99</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic5_002"
+              data-price="99"
+            >
               Add to Cart
             </button>
           </div>
@@ -1102,7 +1711,12 @@
           <img src="ซักผ้า/003.jpg" />
           <div class="layer">
             <p class="lead">แอทเลท $50</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic5_003" data-price="50">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic5_003"
+              data-price="50"
+            >
               Add to Cart
             </button>
           </div>
@@ -1111,7 +1725,12 @@
           <img src="ซักผ้า/004.jpg" />
           <div class="layer">
             <p class="lead">แอทเลท $50</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic5_004" data-price="50">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic5_004"
+              data-price="50"
+            >
               Add to Cart
             </button>
           </div>
@@ -1120,7 +1739,12 @@
           <img src="ซักผ้า/005.png" />
           <div class="layer">
             <p class="lead">โอโม $50</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic5_005" data-price="50">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic5_005"
+              data-price="50"
+            >
               Add to Cart
             </button>
           </div>
@@ -1129,7 +1753,12 @@
           <img src="ซักผ้า/006.webp" />
           <div class="layer">
             <p class="lead">ไฮเตอร์ $25</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic5_006" data-price="25">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic5_006"
+              data-price="25"
+            >
               Add to Cart
             </button>
           </div>
@@ -1138,7 +1767,12 @@
           <img src="ซักผ้า/007.webp" />
           <div class="layer">
             <p class="lead">ไฮเตอร์ $25</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic5_007" data-price="25">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic5_007"
+              data-price="25"
+            >
               Add to Cart
             </button>
           </div>
@@ -1147,7 +1781,12 @@
           <img src="ซักผ้า/008.jpg" />
           <div class="layer">
             <p class="lead">fineline $25</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic5_008" data-price="25">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic5_008"
+              data-price="25"
+            >
               Add to Cart
             </button>
           </div>
@@ -1156,7 +1795,12 @@
           <img src="ซักผ้า/009.webp" />
           <div class="layer">
             <p class="lead">fineline $25</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic5_009" data-price="25">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic5_009"
+              data-price="25"
+            >
               Add to Cart
             </button>
           </div>
@@ -1165,7 +1809,12 @@
           <img src="ซักผ้า/010.jpg" />
           <div class="layer">
             <p class="lead">3แจ๋ว $50</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic5_010" data-price="50">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic5_010"
+              data-price="50"
+            >
               Add to Cart
             </button>
           </div>
@@ -1174,7 +1823,12 @@
           <img src="ซักผ้า/011.jpg" />
           <div class="layer">
             <p class="lead">โอโม $80</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic5_011" data-price="80">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic5_011"
+              data-price="80"
+            >
               Add to Cart
             </button>
           </div>
@@ -1183,7 +1837,12 @@
           <img src="ซักผ้า/012.jpg" />
           <div class="layer">
             <p class="lead">comfort $20</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic5_012" data-price="20">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic5_012"
+              data-price="20"
+            >
               Add to Cart
             </button>
           </div>
@@ -1192,7 +1851,12 @@
           <img src="ซักผ้า/013.webp" />
           <div class="layer">
             <p class="lead">Hygiene $20</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic5_013" data-price="20">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic5_013"
+              data-price="20"
+            >
               Add to Cart
             </button>
           </div>
@@ -1201,7 +1865,12 @@
           <img src="ซักผ้า/014.webp" />
           <div class="layer">
             <p class="lead">Downy $50</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic5_014" data-price="50">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic5_014"
+              data-price="50"
+            >
               Add to Cart
             </button>
           </div>
@@ -1210,19 +1879,28 @@
           <img src="ซักผ้า/015.webp" />
           <div class="layer">
             <p class="lead">Downy $80</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic5_015" data-price="80">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic5_015"
+              data-price="80"
+            >
               Add to Cart
             </button>
           </div>
         </div>
-
-        <!-- แอลกอฮอล์ -->
-        <img src="icon/p7.svg">
+      </div>
+      <div class="tab-content" id="category5">
         <div class="product">
           <img src="แอลกอฮอล์/001.55.jpg" />
           <div class="layer">
             <p class="lead">LEO $55</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic7_001" data-price="55">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic7_001"
+              data-price="55"
+            >
               Add to Cart
             </button>
           </div>
@@ -1231,7 +1909,12 @@
           <img src="แอลกอฮอล์/002.png" />
           <div class="layer">
             <p class="lead">LEO $35</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic7_002" data-price="35">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic7_002"
+              data-price="35"
+            >
               Add to Cart
             </button>
           </div>
@@ -1240,7 +1923,12 @@
           <img src="แอลกอฮอล์/003.jpg" />
           <div class="layer">
             <p class="lead">LEO $40</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic7_003" data-price="40">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic7_003"
+              data-price="40"
+            >
               Add to Cart
             </button>
           </div>
@@ -1249,7 +1937,12 @@
           <img src="แอลกอฮอล์/004.50.jpg" />
           <div class="layer">
             <p class="lead">chang $50</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic7_004" data-price="50">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic7_004"
+              data-price="50"
+            >
               Add to Cart
             </button>
           </div>
@@ -1258,7 +1951,12 @@
           <img src="แอลกอฮอล์/005.png" />
           <div class="layer">
             <p class="lead">chang $36</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic7_005" data-price="36">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic7_005"
+              data-price="36"
+            >
               Add to Cart
             </button>
           </div>
@@ -1267,7 +1965,12 @@
           <img src="แอลกอฮอล์/006.jpg" />
           <div class="layer">
             <p class="lead">SPY $35</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic7_006" data-price="35">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic7_006"
+              data-price="35"
+            >
               Add to Cart
             </button>
           </div>
@@ -1276,7 +1979,12 @@
           <img src="แอลกอฮอล์/007.jpg" />
           <div class="layer">
             <p class="lead">SPY $35</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic7_007" data-price="35">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic7_007"
+              data-price="35"
+            >
               Add to Cart
             </button>
           </div>
@@ -1285,7 +1993,12 @@
           <img src="แอลกอฮอล์/008.webp" />
           <div class="layer">
             <p class="lead">SPY $35</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic7_008" data-price="35">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic7_008"
+              data-price="35"
+            >
               Add to Cart
             </button>
           </div>
@@ -1294,7 +2007,12 @@
           <img src="แอลกอฮอล์/009.webp" />
           <div class="layer">
             <p class="lead">FULL MOON $35</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic7_009" data-price="35">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic7_009"
+              data-price="35"
+            >
               Add to Cart
             </button>
           </div>
@@ -1303,7 +2021,12 @@
           <img src="แอลกอฮอล์/010.jpg" />
           <div class="layer">
             <p class="lead">FULL MOON $35</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic7_010" data-price="35">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic7_010"
+              data-price="35"
+            >
               Add to Cart
             </button>
           </div>
@@ -1312,7 +2035,12 @@
           <img src="แอลกอฮอล์/011.webp" />
           <div class="layer">
             <p class="lead">หงส์ทอง $160</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic7_011" data-price="160">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic7_011"
+              data-price="160"
+            >
               Add to Cart
             </button>
           </div>
@@ -1321,7 +2049,12 @@
           <img src="แอลกอฮอล์/012.jpg" />
           <div class="layer">
             <p class="lead">หงส์ทอง $270</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic7_012" data-price="270">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic7_012"
+              data-price="270"
+            >
               Add to Cart
             </button>
           </div>
@@ -1330,7 +2063,12 @@
           <img src="แอลกอฮอล์/013.png" />
           <div class="layer">
             <p class="lead">BLEND285 $150</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic7_013" data-price="150">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic7_013"
+              data-price="150"
+            >
               Add to Cart
             </button>
           </div>
@@ -1339,7 +2077,12 @@
           <img src="แอลกอฮอล์/014.png" />
           <div class="layer">
             <p class="lead">BLEND285 $300</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic7_014" data-price="300">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic7_014"
+              data-price="300"
+            >
               Add to Cart
             </button>
           </div>
@@ -1348,19 +2091,28 @@
           <img src="แอลกอฮอล์/015.jpg" />
           <div class="layer">
             <p class="lead">เหล้าขาว $40</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic7_015" data-price="40">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic7_015"
+              data-price="40"
+            >
               Add to Cart
             </button>
           </div>
         </div>
-
-        <!-- เครื่องปรุง -->
-        <img src="icon/p8.svg">
+      </div>
+      <div class="tab-content" id="category6">
         <div class="product">
           <img src="เครื่องปรุง/001.39.webp" />
           <div class="layer">
             <p class="lead">แซ่บไมค์ $40</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic8_001" data-price="40">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic8_001"
+              data-price="40"
+            >
               Add to Cart
             </button>
           </div>
@@ -1369,7 +2121,12 @@
           <img src="เครื่องปรุง/002.120.webp" />
           <div class="layer">
             <p class="lead">พันท้ายนรสิงห์ $120</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic8_002" data-price="120">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic8_002"
+              data-price="120"
+            >
               Add to Cart
             </button>
           </div>
@@ -1378,7 +2135,12 @@
           <img src="เครื่องปรุง/003.45.jpg" />
           <div class="layer">
             <p class="lead">อังคณา $45</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic8_003" data-price="45">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic8_003"
+              data-price="45"
+            >
               Add to Cart
             </button>
           </div>
@@ -1386,8 +2148,13 @@
         <div class="product">
           <img src="เครื่องปรุง/004.30.jpg" />
           <div class="layer">
-            <p class="lead">กะทิ  $30</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic8_004" data-price="30">
+            <p class="lead">กะทิ $30</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic8_004"
+              data-price="30"
+            >
               Add to Cart
             </button>
           </div>
@@ -1396,7 +2163,12 @@
           <img src="เครื่องปรุง/005.35.avif" />
           <div class="layer">
             <p class="lead">ซีอิ้วดำ $35</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic8_005" data-price="35">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic8_005"
+              data-price="35"
+            >
               Add to Cart
             </button>
           </div>
@@ -1405,7 +2177,12 @@
           <img src="เครื่องปรุง/006.60.webp" />
           <div class="layer">
             <p class="lead">ซีอิ้วขาว $60</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic8_006" data-price="60">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic8_006"
+              data-price="60"
+            >
               Add to Cart
             </button>
           </div>
@@ -1414,7 +2191,12 @@
           <img src="เครื่องปรุง/007.60.jpg" />
           <div class="layer">
             <p class="lead">น้ำมันหอย $60</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic8_007" data-price="60">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic8_007"
+              data-price="60"
+            >
               Add to Cart
             </button>
           </div>
@@ -1423,7 +2205,12 @@
           <img src="เครื่องปรุง/008.45.avif" />
           <div class="layer">
             <p class="lead">น้ำจิ้มไก่ $45</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic8_008" data-price="45">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic8_008"
+              data-price="45"
+            >
               Add to Cart
             </button>
           </div>
@@ -1432,7 +2219,12 @@
           <img src="เครื่องปรุง/009.15.jpg" />
           <div class="layer">
             <p class="lead">เกลือ $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic8_009" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic8_009"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -1441,7 +2233,12 @@
           <img src="เครื่องปรุง/010.35.png" />
           <div class="layer">
             <p class="lead">น้ำตาล $35</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic8_010" data-price="35">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic8_010"
+              data-price="35"
+            >
               Add to Cart
             </button>
           </div>
@@ -1449,8 +2246,13 @@
         <div class="product">
           <img src="เครื่องปรุง/011.35.jpg" />
           <div class="layer">
-            <p class="lead">แม็กกี่  $35</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic8_011" data-price="35">
+            <p class="lead">แม็กกี่ $35</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic8_011"
+              data-price="35"
+            >
               Add to Cart
             </button>
           </div>
@@ -1459,7 +2261,12 @@
           <img src="เครื่องปรุง/012.20.webp" />
           <div class="layer">
             <p class="lead">น้ำปลา $20</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic8_012" data-price="20">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic8_012"
+              data-price="20"
+            >
               Add to Cart
             </button>
           </div>
@@ -1468,20 +2275,28 @@
           <img src="เครื่องปรุง/013.20.jpg" />
           <div class="layer">
             <p class="lead">น้ำส้มสายชู $20</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic8_013" data-price="20">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic8_013"
+              data-price="20"
+            >
               Add to Cart
             </button>
           </div>
         </div>
-
-
-        <!-- เครื่องสำอาง -->
-        <img src="icon/p9.svg">
+      </div>
+      <div class="tab-content" id="category7">
         <div class="product">
           <img src="เครื่องสำอาง/001.15.jpg" />
           <div class="layer">
             <p class="lead">Care $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic9_001" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic9_001"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
@@ -1490,7 +2305,12 @@
           <img src="เครื่องสำอาง/002.40.png" />
           <div class="layer">
             <p class="lead">Rabi $40</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic9_002" data-price="40">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic9_002"
+              data-price="40"
+            >
               Add to Cart
             </button>
           </div>
@@ -1499,7 +2319,12 @@
           <img src="เครื่องสำอาง/003.35.jpg" />
           <div class="layer">
             <p class="lead">D-nee kids $35</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic9_003" data-price="35">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic9_003"
+              data-price="35"
+            >
               Add to Cart
             </button>
           </div>
@@ -1508,7 +2333,12 @@
           <img src="เครื่องสำอาง/004.40.jpg" />
           <div class="layer">
             <p class="lead">blossoms $40</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic9_004" data-price="40">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic9_004"
+              data-price="40"
+            >
               Add to Cart
             </button>
           </div>
@@ -1517,7 +2347,12 @@
           <img src="เครื่องสำอาง/005.40.webp" />
           <div class="layer">
             <p class="lead">Product $40</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic9_005" data-price="40">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic9_005"
+              data-price="40"
+            >
               Add to Cart
             </button>
           </div>
@@ -1526,7 +2361,12 @@
           <img src="เครื่องสำอาง/006.100.webp" />
           <div class="layer">
             <p class="lead">sunsik $100</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic9_006" data-price="100">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic9_006"
+              data-price="100"
+            >
               Add to Cart
             </button>
           </div>
@@ -1535,7 +2375,12 @@
           <img src="เครื่องสำอาง/007.100.jpg" />
           <div class="layer">
             <p class="lead">sunsik $100</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic9_007" data-price="100">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic9_007"
+              data-price="100"
+            >
               Add to Cart
             </button>
           </div>
@@ -1544,7 +2389,12 @@
           <img src="เครื่องสำอาง/008.25.jpg" />
           <div class="layer">
             <p class="lead">เครียร์ $25</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic9_008" data-price="25">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic9_008"
+              data-price="25"
+            >
               Add to Cart
             </button>
           </div>
@@ -1553,7 +2403,12 @@
           <img src="เครื่องสำอาง/009.25.jpg" />
           <div class="layer">
             <p class="lead">เฮดแอนด์โชว์เดอร์ $25</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic9_009" data-price="25">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic9_009"
+              data-price="25"
+            >
               Add to Cart
             </button>
           </div>
@@ -1562,7 +2417,12 @@
           <img src="เครื่องสำอาง/010.25.webp" />
           <div class="layer">
             <p class="lead">โดฟ $25</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic9_010" data-price="25">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic9_010"
+              data-price="25"
+            >
               Add to Cart
             </button>
           </div>
@@ -1571,7 +2431,12 @@
           <img src="เครื่องสำอาง/011.25.jpg" />
           <div class="layer">
             <p class="lead">PANTENE $25</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic9_011" data-price="25">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic9_011"
+              data-price="25"
+            >
               Add to Cart
             </button>
           </div>
@@ -1580,7 +2445,12 @@
           <img src="เครื่องสำอาง/012.75.jpg" />
           <div class="layer">
             <p class="lead">Shokubutsu $75</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic9_012" data-price="75">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic9_012"
+              data-price="75"
+            >
               Add to Cart
             </button>
           </div>
@@ -1589,7 +2459,12 @@
           <img src="เครื่องสำอาง/013.25.jpg" />
           <div class="layer">
             <p class="lead">เครียร์ $25</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic9_013" data-price="25">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic9_013"
+              data-price="25"
+            >
               Add to Cart
             </button>
           </div>
@@ -1598,7 +2473,12 @@
           <img src="เครื่องสำอาง/014.20.jpg" />
           <div class="layer">
             <p class="lead">ซันซิล- $20</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic9_014" data-price="20">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic9_014"
+              data-price="20"
+            >
               Add to Cart
             </button>
           </div>
@@ -1607,7 +2487,12 @@
           <img src="เครื่องสำอาง/015.25.webp" />
           <div class="layer">
             <p class="lead">ซันซิล $25</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic9_015" data-price="25">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic9_015"
+              data-price="25"
+            >
               Add to Cart
             </button>
           </div>
@@ -1616,7 +2501,12 @@
           <img src="เครื่องสำอาง/016.20.jpg" />
           <div class="layer">
             <p class="lead">Asepso $20</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic9_016" data-price="20">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic9_016"
+              data-price="20"
+            >
               Add to Cart
             </button>
           </div>
@@ -1625,7 +2515,12 @@
           <img src="เครื่องสำอาง/017.40.jpg" />
           <div class="layer">
             <p class="lead">สบู่ มะขาม $40</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic9_017" data-price="40">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic9_017"
+              data-price="40"
+            >
               Add to Cart
             </button>
           </div>
@@ -1634,7 +2529,12 @@
           <img src="เครื่องสำอาง/018.40.png" />
           <div class="layer">
             <p class="lead">สบู่ มะขาม $40</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic9_018" data-price="40">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic9_018"
+              data-price="40"
+            >
               Add to Cart
             </button>
           </div>
@@ -1643,7 +2543,12 @@
           <img src="เครื่องสำอาง/019.25.png" />
           <div class="layer">
             <p class="lead">Protex $25</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic9_019" data-price="25">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic9_019"
+              data-price="25"
+            >
               Add to Cart
             </button>
           </div>
@@ -1652,134 +2557,194 @@
           <img src="เครื่องสำอาง/020.20.jpg" />
           <div class="layer">
             <p class="lead">แคร์ $20</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic9_020" data-price="20">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic9_020"
+              data-price="20"
+            >
               Add to Cart
             </button>
           </div>
         </div>
-        
-
-
-        <!-- ยังชีพ -->
-        <img src="icon/p10.svg">
+      </div>
+      <div class="tab-content" id="category8">
         <div class="product">
           <img src="ยังชีพ/001.15.jpg" />
           <div class="layer">
             <p class="lead">มาม่า $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic10_01" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic10_01"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
         </div>
-        
+
         <div class="product">
           <img src="ยังชีพ/002.7.webp" />
           <div class="layer">
-            <p class="lead">มาม่า  $7</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic10_02" data-price="7">
+            <p class="lead">มาม่า $7</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic10_02"
+              data-price="7"
+            >
               Add to Cart
             </button>
           </div>
         </div>
-        
+
         <div class="product">
           <img src="ยังชีพ/003.7.jpg" />
           <div class="layer">
             <p class="lead">มาม่า $7</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic10_03" data-price="7">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic10_03"
+              data-price="7"
+            >
               Add to Cart
             </button>
           </div>
         </div>
-       
+
         <div class="product">
           <img src="ยังชีพ/004.15.webp" />
           <div class="layer">
             <p class="lead">มาม่า $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic10_04" data-price="15">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic10_04"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
         </div>
-       
+
         <div class="product">
           <img src="ยังชีพ/005.7.png" />
           <div class="layer">
             <p class="lead">มาม่า $7</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic10_05" data-price="7">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic10_05"
+              data-price="7"
+            >
               Add to Cart
             </button>
           </div>
         </div>
-       
+
         <div class="product">
           <img src="ยังชีพ/006.7.jpg" />
           <div class="layer">
             <p class="lead">มาม่า $7</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic10_0" data-price="7">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic10_0"
+              data-price="7"
+            >
               Add to Cart
             </button>
           </div>
         </div>
-        
+
         <div class="product">
           <img src="ยังชีพ/007.7.webp" />
           <div class="layer">
             <p class="lead">มาม่า $7</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic10_07" data-price="7">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic10_07"
+              data-price="7"
+            >
               Add to Cart
             </button>
           </div>
         </div>
-        
+
         <div class="product">
           <img src="ยังชีพ/008.15.jpg" />
           <div class="layer">
-            <p class="lead">ควิก  $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic10_08" data-price="15">
+            <p class="lead">ควิก $15</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic10_08"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
         </div>
-        
+
         <div class="product">
           <img src="ยังชีพ/009.15.png" />
           <div class="layer">
-            <p class="lead">ควิก  $15</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic10_09" data-price="15">
+            <p class="lead">ควิก $15</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic10_09"
+              data-price="15"
+            >
               Add to Cart
             </button>
           </div>
         </div>
-        
+
         <div class="product">
           <img src="ยังชีพ/010.7.jpg" />
           <div class="layer">
-            <p class="lead">ไวไว  $7</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic10_10" data-price="7">
+            <p class="lead">ไวไว $7</p>
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic10_10"
+              data-price="7"
+            >
               Add to Cart
             </button>
           </div>
         </div>
-        
+
         <div class="product">
           <img src="ยังชีพ/011.135.jpg" />
           <div class="layer">
             <p class="lead">ข้าวหอมมะลิ $135</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic10_11" data-price="135">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic10_11"
+              data-price="135"
+            >
               Add to Cart
             </button>
           </div>
         </div>
-
-
-            <!-- ฝากขาย -->
-        <img src="icon/p6.svg">
+      </div>
+      <div class="tab-content" id="category9">
         <div class="product">
           <img src="ฝากขาย/01.jpg" />
           <div class="layer">
             <p class="lead">เฉาก๊วย $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic6_01" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic6_01"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -1788,7 +2753,12 @@
           <img src="ฝากขาย/02.jpg" />
           <div class="layer">
             <p class="lead">ขนมน้ำตาล $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic6_02" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic6_02"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -1797,7 +2767,12 @@
           <img src="ฝากขาย/03.jpg" />
           <div class="layer">
             <p class="lead">ลูกอม $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic6_03" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic6_03"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -1806,7 +2781,12 @@
           <img src="ฝากขาย/04.jpg" />
           <div class="layer">
             <p class="lead">แซ่บ $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic6_04" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic6_04"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -1815,7 +2795,12 @@
           <img src="ฝากขาย/05.jpg" />
           <div class="layer">
             <p class="lead">เชอรี่ $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic6_05" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic6_05"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -1824,7 +2809,12 @@
           <img src="ฝากขาย/06.jpg" />
           <div class="layer">
             <p class="lead">มะขามน้ำตาล $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic6_06" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic6_06"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -1833,7 +2823,12 @@
           <img src="ฝากขาย/07.jpg" />
           <div class="layer">
             <p class="lead">บ๊วย $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic6_07" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic6_07"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -1842,7 +2837,12 @@
           <img src="ฝากขาย/08.jpg" />
           <div class="layer">
             <p class="lead">ขนมข้าวโพด $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic6_08" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic6_08"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -1851,7 +2851,12 @@
           <img src="ฝากขาย/09.jpg" />
           <div class="layer">
             <p class="lead">ขนม $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic6_09" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic6_09"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -1860,7 +2865,12 @@
           <img src="ฝากขาย/10.jpg" />
           <div class="layer">
             <p class="lead">ลูกอม $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic6_10" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic6_10"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -1869,7 +2879,12 @@
           <img src="ฝากขาย/11.jpg" />
           <div class="layer">
             <p class="lead">ถั่วคั่ว $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic6_11" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic6_11"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
@@ -1878,18 +2893,17 @@
           <img src="ฝากขาย/12.jpg" />
           <div class="layer">
             <p class="lead">กากหมู $5</p>
-            <button class="btn btn-primary" id="add-to-cart" data-product-id="ic6_12" data-price="5">
+            <button
+              class="btn btn-primary"
+              id="add-to-cart"
+              data-product-id="ic6_12"
+              data-price="5"
+            >
               Add to Cart
             </button>
           </div>
         </div>
-
-
-
-
       </div>
-
-
       <div class="cart">
         <h2>Cart <i class="fa-solid fa-cart-shopping"></i></h2>
         <div id="cart">
@@ -1904,6 +2918,19 @@
     <script src="save-pdf.js"></script>
 
     <script src="cart.js"></script>
-</body>
-
+    <script>
+      const tablinks = document.getElementsByClassName("tab-link");
+      const tabcontents = document.getElementsByClassName("tab-content");
+      const opentab = (tabname) => {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      };
+    </script>
+  </body>
 </html>
