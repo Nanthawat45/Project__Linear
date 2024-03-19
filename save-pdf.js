@@ -30,7 +30,9 @@ document.getElementById("place-order").addEventListener("click", async () => {
     (acc, item) => acc + item.quantity * item.price,
     0
   );
-  const totalPriceText = `Total Price: $${totalPrice}`;
+  const totalPriceText = `Total Price: $${totalPrice}
+  Store: ShowHuay 
+  Tel: 0926142712`;
   page.drawText(totalPriceText, {
     x: 20,
     y: 50,
