@@ -91,3 +91,13 @@ function removeAllProducts() {
 }
 
 
+
+//GPT
+// ตัวอย่าง JavaScript เพื่อเพิ่มฟังก์ชันการคลิกเมนูบนโทรศัพท์มือถือ
+
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('nav ul');
+
+menuToggle.addEventListener('click', function() {
+  nav.classList.toggle('slide');
+});
